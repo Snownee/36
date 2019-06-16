@@ -47,6 +47,7 @@ new Vue({
         return
       }
 
+      var hashCodes = []
       for (var c of card) {
         var bits = []
         var maxBit = 0
@@ -94,13 +95,20 @@ new Vue({
             }
             if (sum == 36)
             {
-              this.results.push(result)
+              var hash = 0
+              for (n of result) {
+                hash = hash * 31 + n
+              }
+              if (hashCodes.indexOf(hash) < 0)
+              {
+                this.results.push(result)
+                hashCodes.push(hash)
+              }
             }
           }
 
         } while (countTrue < fang.length);
       }
-      console.log(this.results);
     }
   }
 })
