@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>36</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="main.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <card-selector class="fang" ref="fang"></card-selector>
+      <card-selector class="card" ref="card"></card-selector>
+      <ul class="results">
+        <div v-for="r in results">{{ r.join('+') }}</div>
+      </ul>
+    </div>
+  </body>
+</html>
